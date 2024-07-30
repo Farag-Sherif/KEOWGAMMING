@@ -1,0 +1,709 @@
+:root{
+	--main-background:#1b152c;
+	--main-color: #e46722;
+	--windows-color:#1090ff;
+	--xbox-color:#31d954;
+	--ps5-color:#3331ff;
+}
+/* start componand */
+html{
+	scroll-behavior: smooth;
+}
+*{
+	font-family: "Work Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+body{
+	background-color:#160f22;
+}
+a{
+	text-decoration:none;
+}
+ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.container {
+  width:95%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media(max-width:767px){
+	.container {
+		width:100%;
+	}
+}
+.background-skew::before{
+	content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 100%;
+    top: 50%;
+	left:0;
+    transform: translateY(-50%) skewX(-20deg);
+    z-index: -1;
+}
+.devices{
+	flex-direction: column;
+    display: flex;
+}
+.devices a{
+	padding: 6px 5px;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.devices .windows{
+    background-color: var(--windows-color);
+}
+.devices .xbox{
+	background-color: var(--xbox-color);
+}
+.devices .playstation{
+	background-color: var(--ps5-color);
+}
+
+/* end componand */
+/* start header */
+header{
+    margin: 15px 0;
+	position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .logo{
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+@media(max-width:767px){
+	header .container .logo{
+		font-size: 18px;
+	}
+}
+header .container .logo span{
+    font-size: 40px;
+    padding: 5px 15px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    margin-right: 5px;
+}
+@media(max-width:767px){
+	header .container .logo span{
+		font-size: 30px;
+		padding: 5px 12px;
+	}
+}
+header .container .fa-bars{
+	color: white;
+}
+@media(min-width:993px){
+	header .container .fa-bars{
+		display:none;
+	}
+}
+header .container a:hover ~ .options{
+	display:flex;
+}
+header .container .options{
+    display: flex;
+    align-items: center;	
+}
+@media(max-width:992px){
+	header .container .options{
+		flex-direction: column;
+		background-color: #050404;
+		padding: 100px 20px;
+		top: -15px;
+		right: 0;
+		position: absolute;
+		z-index: 10;
+		display:none;
+	}
+}
+header .container .options li{
+	position:relative;
+}
+@media (max-width:992px){
+	header .container .options li{
+		margin: 35px 15px;
+	}
+}
+header .container .options li::before{
+    padding: 15px 0;
+}
+header .container .options li:not(:last-child)::before{
+	display:none;
+}
+header .container .options #active::before{
+		display:block;
+}
+header .container .options li:hover::before{
+	display:block;
+}
+header .container .options li a{
+	color: white;
+    margin: 0 12px;
+    text-transform: uppercase;
+}
+header .container .options li:last-child a{
+	margin: 0 10px;
+}
+header .container .options li a i{
+	color: var(--main-color);
+}
+header .container .options li span{
+	position: relative;
+    font-size: 18px;
+    font-weight: 700;
+}
+header .container .options li span::before{
+    padding: 18px 10px;
+    background-color: white;
+    left: -50%;
+}
+/* end header */
+/* start landing */
+.landing{
+	position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url(../image/helldivers.webp);
+    background-size: cover;
+    display: flex;
+    align-items: end;
+	z-index: 0;
+}
+.landing .container::before{
+	content:"";
+	position: absolute;
+    height: 100%;
+    width: 70%;
+    background-color: #160f22;
+    margin: 0;
+    transform: skewX(-25deg);
+    top: 0;
+    left: -230px;
+	z-index: -1;
+}
+.landing .container .text{
+    width: 50%;
+    color: white;
+}
+@media (max-width:767px){
+	.landing .container .text{
+		width: 100%;
+	}
+}
+.landing .container .text h4{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0;	
+}
+@media (max-width:767px){
+	.landing .container .text h4{
+		font-size:16px;
+	}
+}
+.landing .container .text h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    margin: 5px 0;	
+}
+@media (max-width:767px){
+	.landing .container .text h1{
+		font-size:25px;
+	}
+}
+.landing .container .text p{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.7;	
+}
+.landing .container .buttons{
+	margin-top:80px;
+    width: fit-content;
+	position:relative;
+}
+@media (max-width:767px){
+	.landing .container .buttons{
+		margin-top:40px;
+	}
+}
+.landing .container .buttons::before{
+	content: "";
+    border: 2px solid var(--main-color);
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%) skewX(-20deg);
+}
+.landing .container .buttons a{
+    padding: 12px;
+    position: relative;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;	
+}
+.landing .container .buttons a::before{
+    width: calc(100% + 5px);
+	display:none;
+}
+.landing .container .buttons .active::before,
+.landing .container .buttons a:hover::before{
+	display:block;
+}
+.landing .container .icons{
+	margin:60px 0 20px;	
+	color: white;
+}
+@media (max-width:767px){
+	.landing .container .icons{
+		margin-top:40px;
+	}
+}
+.landing .container .icons a{
+    color: white;
+    margin-right: 10px;
+	transition:.3s;
+}
+.landing .container .icons a:nth-child(2):hover{
+	color:var(--windows-color);
+}
+.landing .container .icons a:nth-child(3):hover{
+	color:var(--xbox-color);
+}
+.landing .container .icons a:nth-child(4):hover{
+	color:var(--ps5-color);
+}
+.landing .container .icons a:last-child:hover{
+	color:var(--main-color);
+}
+.landing .container .move{
+    text-align: end;
+}
+.landing .container .move i{
+    padding: 5px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 20px;
+    color: white;
+}
+/* end landing */
+/* start header of sections  */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;	
+}
+.header .text{
+    display: flex;
+    align-items: center;
+	margin-left:20px
+}
+.header .text span{
+    border: 10px solid;
+    border-color: transparent transparent transparent var(--main-color);
+    transform: scaleX(1.8);	
+}
+.header .text span::before{
+    content: "";
+    height: 22px;
+    width: 2px;
+    position: absolute;
+    background-color: var(--main-color);
+    left: -14px;
+    top: -11px;
+}
+.header .text h1{
+    color: white;
+    text-transform: uppercase;	
+}
+@media (max-width:767px){
+	.header .text h1{
+		font-size:25px;
+	}
+}
+.header .icons{
+	display:flex;
+}
+.header .icons i{
+    padding: 5px 9px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+	cursor:pointer;	
+}
+/* end header of sections */
+/* start top games */
+.top-games{
+	padding-top:50px;
+}
+.top-games .container .content{
+    display: flex;
+	gap: 30px;
+    overflow-x: hidden;
+}
+.top-games .container .content .game{
+    min-width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--main-background);
+    z-index: 0;
+    width: 300px;
+}
+.top-games .container .content .game .image{
+    position: relative;	
+}
+.top-games .container .content .game .image .discount{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+}
+.top-games .container .content .game .image .discount span{
+    position: relative;
+    z-index: 0;
+    padding: 5px 15px 5px 10px;
+    margin: 0 -5px;
+	display: block;
+}
+.top-games .container .content .game .text{
+	padding: 0 15px 20px;
+}
+.top-games .container .content .game .info{
+    border-bottom: 3px solid var(--main-color);
+}
+.top-games .container .content .game .info span{
+    position: relative;
+    padding: 10px 15px;
+    margin: -5px 0 0 -22px;
+    color: white;
+    display: block;
+    width: fit-content;
+}
+.top-games .container .content .game h3{
+    color: white;
+	font-size:13px;	
+}
+.top-games .container .content .game .price{
+    color: white;
+	display: flex;
+    align-items: center;
+	margin-top:15px;
+}
+.top-games .container .content .game .price a:first-child{
+	width:100%;
+}
+.top-games .container .content .game .price i{
+	color:white;
+	padding: 10px;
+	background-color:var(--main-color);
+	border-radius:50%;
+}
+.before-discount{
+    text-decoration: line-through;
+}
+.top-games .container .content .game .price span{
+    position: relative;
+    padding: 10px 15px;
+	display: block;
+    width: fit-content;
+	color:white;
+}
+/* end top games */
+/* start shop */
+.shop{
+	padding-top:50px;	
+}
+.shop .container .content{
+    display: flex;
+	gap: 30px;
+    overflow-x: hidden;	
+}
+.shop .container .content .game{
+    min-width: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--main-background);
+    z-index: 0;
+    width: 250px;	
+}
+.shop .container .content .game .image{
+	position: relative;	
+}
+.shop .container .content .game .image img{
+	width:100%;
+}
+.shop .container .content .game .image span{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2;
+    padding: 10px;
+    color: white;
+}
+.shop .container .content .game .text{
+    display: flex;
+    justify-content: space-between;
+	align-items: end;
+	padding: 15px 10px;
+}
+.shop .container .content .game .info{
+	display: flex;
+    flex-direction: column;	
+    color: white;
+}
+.shop .container .content .game .info h3{
+    font-size: 16px;
+    margin: 0;	
+}
+.shop .container .content .game .after-discount{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.shop .container .content .game  .info a{
+    position: relative;
+	padding: 5px 15px;
+    color: white;
+}
+.shop .container .content .game .info .before-discount{
+    margin: 10px 0;
+}
+.shop .container .content .game .loves{
+	position:relative;
+	padding:5px;
+    background-color: #252a44;
+	cursor:pointer;
+}
+.shop .container .content .game .loves span{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+.free-games .container .content .game .info{
+	display: flex;
+    flex-direction: column;	
+    color: white;
+	padding:15px;
+}
+
+.free-games .devices{
+	position: absolute;
+    top: 10px;
+    flex-direction: row;
+}
+.free-games .devices a{
+    margin: 5px;
+}
+.free-games .container .content .game .after-discount{
+	margin:0px;
+}
+/* end shop */
+/* start blog */
+.blog{
+	padding-top:50px;	
+}
+.blog .container{
+	display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 30px;
+}
+.blog .container .boxs{
+    background-color: var(--main-background);
+    padding: 10px;
+    border-radius: 15px;	
+}
+.blog .container .boxs .header .text{
+    margin: 0;
+}
+.blog .container .boxs .header .text span{
+    border-width: 5px;
+}
+.blog .container .boxs .header .text span::before{
+    height: 12px;
+    width: 1px;
+    left: -7px;
+    top: -6px;
+}
+.blog .container .boxs .header .text h1{
+    font-weight: normal;	
+	font-size: 13px;
+}
+.blog .container .boxs .header .view-all{
+    position: relative;
+    padding: 5px 10px;
+    color: white;
+    z-index: 1;
+}
+.blog .container .boxs .game{
+	padding: 30px 5px 0 20px;
+    display: flex;
+    align-items: center;
+}
+@media (max-width:767px){
+	.blog .container .boxs .game{
+		padding: 30px 0 0 ;
+	}
+}
+.blog .container .boxs .game img{
+    width: 75px;
+    height: 100px;
+    border-radius: 10px;	
+}
+.blog .container .boxs .game .text{
+    flex: 1;
+    margin-left: 20px;
+    color: white;	
+}
+.blog .container .boxs .game .text h3{
+	margin: 0;
+    font-size: 16px;
+    font-weight: normal;	
+}
+.blog .container .boxs .game .text .available{
+	margin: 5px 0;	
+}
+.blog .container .boxs .game .text p{
+	padding: 5px 10px;
+    background-color: var(--main-color);
+    width: fit-content;
+    border-radius: 20px;
+    margin: 10px 0;	
+}
+.blog .container .boxs .game .text .before-discount{
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+/* end blog */
+/* start popular games */
+.popular-games{
+	padding-top:50px;
+}
+.popular-games h1{
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 4vw;
+    margin: 0 0 20px;
+}
+.popular-games .container .row{
+    display: flex;
+}
+.popular-games .container img{
+    border-radius: 5px;
+    border: 2px solid transparent;
+	width:25%;
+}
+.popular-games .container .big-image{
+	width:50%;
+}
+/* end popular games */ 
+/* start contact */
+.contact{
+    padding-top: 50px;
+}
+
+.contact .container .info{
+    border-top: 4px solid white;
+    display: flex;
+	justify-content:space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+@media(max-width:767px){
+	.contact .container .info{
+		justify-content:center;
+		text-align:center;
+	}
+}
+.contact .container .info .box{
+    color: white;	
+    max-width: 100%;
+    width: 250px;
+}
+.contact .container .info .box h3{
+    font-size: 20px;
+    margin: 25px 0;
+    border-bottom: 3px dashed;
+    font-weight: 400;
+	width: fit-content;
+	text-transform: uppercase;
+}
+@media(max-width:767px){
+	.contact .container .info .box h3{
+		margin:25px auto;
+	}
+}
+.contact .container .info .box p{
+	margin:0 0 10px ;
+}
+.contact .container .info .box .connect{
+	margin-bottom: 5px;	
+}
+.contact .container .info .box .connect a{
+	color:white;
+}
+.contact .container .info .box .socail a i{
+	font-size:20px;
+	margin:5px;
+	color: white;
+	transition: .3s;
+}
+.contact .container .info .need-help a{
+	display:block;
+	margin-bottom:5px;
+	color:white;
+    transition: .3s;
+}
+.contact .container .info .need-help a:hover{
+	color:var(--windows-color);
+}
+.contact .container .info .box .facebook:hover i{
+	color:#0d69d5;
+}
+.contact .container .info .box .linkedin:hover i{
+	color:blue;
+}
+.contact .container .info .box .instagram:hover i{
+	color: #ac6eea;;
+}
+.contact .container .info .box .twitter:hover i{
+	color:#00acee;
+}
+.contact .container .info .box .youtube:hover i{
+	color:#ff0000;
+}
+.contact .container .info .box .pinterest-p:hover i{
+	color:black;
+}
+/* end contact */
