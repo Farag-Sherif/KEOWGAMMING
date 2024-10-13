@@ -246,7 +246,7 @@ header .container .options li span::before{
     width: fit-content;
 	position:relative;
 }
-@media (max-width:767px){
+@media (max-width:992px){
 	.landing .container .buttons{
 		margin-top:40px;
 	}
